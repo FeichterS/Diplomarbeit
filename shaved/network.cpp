@@ -1,0 +1,104 @@
+#include "network.h"
+#include <QMessageBox>
+
+/*
+ ##########################################################
+ #####                                                #####
+ #####    Funktionen zur Kommunikation über UDP/TCP   #####
+ #####                                                #####
+ ##########################################################
+ */
+
+network::network(QObject *parent) :
+    QObject(parent)
+{
+    database db;
+    IP.setAddress(db.getIp());
+    // create a QUDP udp_socket
+    udp_socket = new QUdpSocket(this);
+    udp_socket->bind(IP, PORT_UDP);
+
+    qDebug() << IP;
+
+    connect(udp_socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
+    tcp_socket = new QTcpSocket(this);
+    tcp_socket->connectToHost(IP, PORT_TCP);
+    if(!tcp_socket->waitForConnected(5000))
+    {
+        qDebug() << "Error: " << tcp_socket->errorString();
+        QMessageBox error_box;
+        error_box.critical(0,"Error", tcp_socket->errorString());
+        error_box.setFixedSize(500,200);
+        error = true;
+
+    }
+
+    for(int i = 0; i < 8; i++)
+    {
+        current_analog.append(0);
+        current_digital.append(0);
+    }
+}
+
+void network::HelloUDP()
+{
+    QByteArray Data;
+    Data.append("Hello from UDP");
+
+    // Sends the datagram datagram
+    // to the host address and at port.
+    // qint64 QUdpudp_socket::writeDatagram(const QByteArray & datagram,
+    //                      const QHostAddress & host, quint16 port)
+    udp_socket->writeDatagram(Data, IP, PORT_UDP);
+}
+
+void network::readyRead()
+{
+    // when data comes in
+    QByteArray buffer;
+    buffer.resize(udp_socket->pendingDatagramSize());
+
+    QHostAddress sender;
+    quint16 senderPort;
+
+    // qint64 QUdpudp_socket::readDatagram(char * data, qint64 maxSize,
+    //                 QHostAddress * address = 0, quint16 * port = 0)
+    // Receives a datagram no larger than maxSize bytes and stores it in data.
+    // The sender's host address and port is stored in *address and *port
+    // (unless the pointers are 0).
+
+    udp_socket->readDatagram(buffer.data(), buffer.size(),
+                         &sender, &senderPort);
+
+    seperate_msg(buffer);
+    emit readyPlot(current_analog,current_digital);
+}
+
+void network::seperate_msg(QByteArray msg)
+{
+    QString buffer = msg;
+    QStringList list;
+    list = buffer.split(':');
+    for(int i = 0; i < 8; i++)
+    {
+        buffer = list.at(i);
+        current_analog.replace(i,buffer.toDouble());
+    }
+    for(int i = 0; i < 8; i++)
+    {
+        buffer = list.at(i+8);
+        current_digital.replace(i,buffer.toInt());
+    }
+}
+
+void network::send_settings(int port_config[])
+{
+    qDebug() << "--------------------------sending-----------------------";
+    QByteArray msg;
+    for(int i = 0; i < 16; i++)
+    {
+        msg.append(QString::number(port_config[i]));
+        msg.append(":");
+    }
+    tcp_socket->write(msg);
+}

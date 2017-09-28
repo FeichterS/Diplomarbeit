@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>config</class>
+ <widget class="QDialog" name="config">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1173</width>
+    <height>666</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1181</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Analog</string>
+    </attribute>
+    <widget class="QPushButton" name="button_analog_upload">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>300</y>
+       <width>271</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Upload</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_next_digital">
+     <property name="geometry">
+      <rect>
+       <x>944</x>
+       <y>620</y>
+       <width>231</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Digital -&gt;</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>40</y>
+       <width>1091</width>
+       <height>227</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="Analog_ports">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Port</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>2</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>4</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>5</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>6</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>7</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="analog_bezeichnung">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Bezeichnung</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_analog_0"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_analog_1"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_analog_2"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_analog_3"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_analog_4"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_analog_5"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_analog_6"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_analog_7"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="analog_slide">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Messdauer</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="conf_slid_analog_0">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="conf_slid_analog_1">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="conf_slid_analog_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="conf_slid_analog_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="conf_slid_analog_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="conf_slid_analog_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="conf_slid_analog_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="conf_slid_analog_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="analog_time">
+        <item>
+         <widget class="QLabel" name="label_12">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Messdauer</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QLineEdit" name="conf_line_slide_0"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="conf_line_slide_1"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="conf_line_slide_2"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="conf_line_slide_3"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="conf_line_slide_4"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="conf_line_slide_5"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="conf_line_slide_6"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="conf_line_slide_7"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_38">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Sensortyp</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="analog_combo_sensor_0"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="analog_combo_sensor_1"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="analog_combo_sensor_2"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="analog_combo_sensor_3"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="analog_combo_sensor_4"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="analog_combo_sensor_5"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="analog_combo_sensor_6"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="analog_combo_sensor_7"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Digital</string>
+    </attribute>
+    <widget class="QPushButton" name="button_next_can">
+     <property name="geometry">
+      <rect>
+       <x>940</x>
+       <y>620</y>
+       <width>231</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>CANl -&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_prev_analog">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>620</y>
+       <width>231</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;- Analog</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_digital_upload">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>320</y>
+       <width>271</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Upload</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>40</y>
+       <width>471</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <layout class="QVBoxLayout" name="digital_port">
+        <item>
+         <widget class="QLabel" name="label_14">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Port</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_17">
+          <property name="text">
+           <string>2</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_18">
+          <property name="text">
+           <string>3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_19">
+          <property name="text">
+           <string>4</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_20">
+          <property name="text">
+           <string>5</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>6</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_22">
+          <property name="text">
+           <string>7</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="digital_bezeichnung">
+        <item>
+         <widget class="QLabel" name="label_13">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Bezeichnung</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_digital_0"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_digital_1"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_digital_2"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_digital_3"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_digital_4"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_digital_5"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_digital_6"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_digital_7"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>CAN</string>
+    </attribute>
+    <widget class="QPushButton" name="button_next_output">
+     <property name="geometry">
+      <rect>
+       <x>940</x>
+       <y>620</y>
+       <width>231</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Output -&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_prev_digital">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>620</y>
+       <width>231</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;- Digital</string>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tableView_can">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>10</y>
+       <width>581</width>
+       <height>441</height>
+      </rect>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>360</y>
+       <width>541</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_23">
+          <property name="text">
+           <string>Bezeichnung</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_24">
+          <property name="text">
+           <string>Nachricht</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLineEdit" name="line_bezeichnung"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="line_message"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QPushButton" name="button_can_delete">
+          <property name="text">
+           <string>Löschen</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="button_add">
+          <property name="text">
+           <string>Hinzufügen</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="button_edit">
+          <property name="text">
+           <string>Bearbeiten</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_6">
+    <attribute name="title">
+     <string>Ausgang</string>
+    </attribute>
+    <widget class="QPushButton" name="button_prev_can">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>620</y>
+       <width>231</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;- CAN</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_output_upload">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>290</y>
+       <width>271</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Upload</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>30</y>
+       <width>1061</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <layout class="QVBoxLayout" name="Analog_ports_2">
+        <item>
+         <widget class="QLabel" name="label_25">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Port</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_26">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_27">
+          <property name="text">
+           <string>1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_28">
+          <property name="text">
+           <string>2</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_29">
+          <property name="text">
+           <string>3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_30">
+          <property name="text">
+           <string>4</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_31">
+          <property name="text">
+           <string>5</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_32">
+          <property name="text">
+           <string>6</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_33">
+          <property name="text">
+           <string>7</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="analog_bezeichnung_2">
+        <item>
+         <widget class="QLabel" name="label_34">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Bezeichnung</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_output_0"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_output_1"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_output_2"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_output_3"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_output_4"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_output_5"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_output_6"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="conf_line_output_7"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_35">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Abhängigket</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_0"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_1"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_2"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_3"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_4"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_5"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_6"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_7"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_36">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Verknüpfung</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_verkn_0"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_verkn_1"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_verkn_2"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_verkn_3"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_verkn_4"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_verkn_5"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_verkn_6"/>
+        </item>
+        <item>
+         <widget class="QComboBox" name="output_combo_verkn_7"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_37">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Bedingung</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="output_line_bed_0"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="output_line_bed_1"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="output_line_bed_2"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="output_line_bed_3"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="output_line_bed_4"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="output_line_bed_5"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="output_line_bed_6"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="output_line_bed_7"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
